@@ -6,7 +6,6 @@
 """
 
 import unittest
-import numpy
 import CodingChallenge
 
 class Problem102(unittest.TestCase):    
