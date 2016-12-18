@@ -1,11 +1,16 @@
-from flask import Flask, jsonify, request, make_response
+from flask import Flask, jsonify, request, make_response, render_template
 from flask_cors import CORS, cross_origin
 import json
 import CodingChallenge
+import urllib
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/api": {"origins": "*"}})
+cors = CORS(app, resources={"/api": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.errorhandler(404)
 def not_found(error):
@@ -21,7 +26,7 @@ def return_contains_origin():
 	returns 400 (BAD REQUEST) on invalid triangle
 	"""
 	try:
-		vertices = request.form['vertices']
+		vertices = urllib.unquote(urllib.unquote(request.form['vertices']))
 		main_triangle = CodingChallenge.Triangle(*vertices.split(","))
 		return jsonify(main_triangle.contains_origin())
 	except TypeError:
