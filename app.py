@@ -17,8 +17,8 @@ def not_found(error):
 @app.route("/api/containsOrigin", methods=["POST"])
 def return_contains_origin():
 	"""
-	Returns True if the given triangle encloses the origin, returns 400 (Forbidden)
-	on invalid Triangle
+	Returns True if the given triangle encloses the origin,
+	returns 400 (BAD REQUEST) on invalid triangle
 	"""
 	try:
 		vertices = request.form['vertices']
