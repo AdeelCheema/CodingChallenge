@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+    CodingChallenge.p102
+    ~~~~~~~~~~~~~~~~~~~~~~~
+    Problem 102 Module
+"""
+
 import math, time
 
 class Triangle(object):
