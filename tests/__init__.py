@@ -23,3 +23,6 @@ class Initialization(unittest.TestCase):
             import CodingChallenge
         except ImportError:
             self.fail("Was not able to import the Coding Challenge")
+
+if __name__ == '__main__':
+    unittest.main()
