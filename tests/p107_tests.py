@@ -93,7 +93,7 @@ class Problem107_SolutionHelper_Test(unittest.TestCase):
         """
         helper = CodingChallenge.SolutionHelper("p107_test_network.txt")
         nodes,edges,total_weight = helper.generate_tree()
-        self.assertEqual(len(nodes), 40)
+        self.assertEqual(lien(nodes), 40)
         self.assertEqual(len(edges), 513)
         self.assertEqual(total_weight, 261888)
 
@@ -121,4 +121,6 @@ class Problem107_Euler_Test(unittest.TestCase):
         Ensures the runtime is provided for Problem 107
         """
         self.assertTrue(CodingChallenge.solution_107()[1])
-        
+      
+if __name__ == '__main__':
+    unittest.main()  

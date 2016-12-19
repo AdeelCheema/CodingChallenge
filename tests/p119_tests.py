@@ -54,3 +54,6 @@ class Problem119(unittest.TestCase):
         Ensures the runtime is provided for Problem 119
         """
         self.assertTrue(CodingChallenge.solution_119()[1])
+
+if __name__ == '__main__':
+    unittest.main()
