@@ -15,11 +15,10 @@ Each solution was coded in Python
 
 The solutions are located in the main CodingChallenge folder and are directly runnable.
 
-Tests for each solution are provided in the tests folder.
+Tests for each solution are provided in the tests folder. They can be run using nosestests within the main project directory.
 
 ```sh
-$ nosetests -v --with-coverage --cover-package=CodingChallenge \
-              --cover-inclusive --cover-erase tests
+$ nosetests
 ```
 
 ### Extra
