@@ -19,6 +19,10 @@ class Node(object):
         self.rank = 0
 
     def __eq__(self,other):
+        """
+        Two nodes are considered equal if they have the same label
+
+        """
         return self.label == other.label
 
 class DisjointSet(object):
@@ -61,7 +65,8 @@ class DisjointSet(object):
     def union(self, node1, node2):
         """
         Merges node1 and node2, optimized with rank, allowing smaller
-        sets to be merged into larger sets
+        sets to be merged into larger sets, in combination with path
+        compression
         """
         root_node_1 = self.find(node1)
         root_node_2 = self.find(node2)
@@ -85,7 +90,8 @@ class MinimalSpanningTree(object):
         self.current_mst = []
         self.nodes = nodes
         self.edges = edges
-        self.size = len(nodes) - 1
+        self.size = 0
+        self.target_size = len(nodes) - 1
         for node in nodes:
             self.forest.add(node)
 
@@ -108,9 +114,10 @@ class MinimalSpanningTree(object):
     @property
     def spanning(self):
         """
-        Returns true if the MST is spanning
+        Returns true if the MST is spanning, by checking to see
+        if the number of vertices = n (original number of vertices) - 1
         """
-        return self.size == 0
+        return self.size == self.target_size
 
     def calculate_spanning_tree(self):
         """
@@ -124,7 +131,7 @@ class MinimalSpanningTree(object):
             root_1 = self.forest.find(node1)
             root_2 = self.forest.find(node2)
             if (root_1 is not root_2):
-                self.size -= 1
+                self.size += 1
                 self.current_mst.append(edge)
                 total_mst_weight += edge[2]
                 if self.spanning:
