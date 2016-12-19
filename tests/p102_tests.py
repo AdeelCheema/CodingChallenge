@@ -46,6 +46,6 @@ class Problem102(unittest.TestCase):
 
     def test_solution_runtime(self):
         """
-        Ensures the runtime is provided for Proem 102
+        Ensures the runtime is provided for Problem 102
         """
         self.assertTrue(CodingChallenge.solution_102()[1])
