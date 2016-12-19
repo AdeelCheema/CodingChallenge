@@ -9,8 +9,8 @@ import time
 
 class Node(object):
     """
-    The node class represents a node object, which contains a value and
-    a rank
+    The node class represents a node object, which contains a value, a label,
+    and a rank. 
 
     """
     def __init__(self,label):
@@ -31,21 +31,38 @@ class DisjointSet(object):
 
     """
     def __init__(self):
+        """
+        A disjoint set is initialized with an empty collection
+        """
         self.collection = []
 
     @property
     def sets(self): 
+        """
+        Returns the disjoint set collection 
+        """        
         return self.collection
 
     def add(self, node):
+        """
+        Adds a node to the disjoint set collection
+        """        
         self.collection.append(node)
 
     def find(self, node):
+        """
+        Given a node, returns its parent node, optimized with path
+        compression. 
+        """
         while node != node.parent:
             node = node.parent
         return node
  
     def union(self, node1, node2):
+        """
+        Merges node1 and node2, optimized with rank, allowing smaller
+        sets to be merged into larger sets
+        """
         root_node_1 = self.find(node1)
         root_node_2 = self.find(node2)
         if root_node_1.rank < root_node_2.rank:
@@ -73,10 +90,16 @@ class MinimalSpanningTree(object):
             self.forest.add(node)
 
     def __len__(self):
+        """
+        Returns the size of the MST
+        """
         return self.size
 
     @property
     def weight(self):
+        """
+        Returns the weight of the MST
+        """
         total = 0
         for value in self.edges:
             total += value[2]
@@ -84,9 +107,15 @@ class MinimalSpanningTree(object):
     
     @property
     def spanning(self):
+        """
+        Returns true if the MST is spanning
+        """
         return self.size == 0
 
     def calculate_spanning_tree(self):
+        """
+        Calculates and returns the MST, along with its new weight
+        """
         total_mst_weight = 0
         self.edges.sort(key=lambda x: x[2])
 
@@ -108,6 +137,9 @@ class SolutionHelper(object):
     input file, networks.txt from Project Euler
     """
     def __init__(self, file_name):
+        """
+        Imports network.txt and splits input into individual edges
+        """
         self.lines = []
         f = open (file_name, "r")
         for line in f.read().split('\n'):
@@ -118,6 +150,10 @@ class SolutionHelper(object):
         self.nodes = []
 
     def generate_tree(self):
+        """
+        Generates a tree (nodes/edges) and its current weight given 
+        the edges input.
+        """
         total_original_weight = 0
 
         for vertex in range(0, self.size):
