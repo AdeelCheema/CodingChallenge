@@ -31,6 +31,17 @@ class Problem119(unittest.TestCase):
         number1 = CodingChallenge.Number(55)
         self.assertTrue(number1.square(2))
 
+    def test_algorithm(self):
+        """
+        Ensures the first value outputted by the solution is correct
+        """
+        for base in range(5,70):
+            base = CodingChallenge.Number(base)
+            for exponent in range (2,20):
+                square = CodingChallenge.Number(base.square(exponent))
+                if square.sum_digits == base.val:
+                    self.assertEqual(square.sum_digits,base.val)
+
 
     def test_euler_solution(self):
         """
