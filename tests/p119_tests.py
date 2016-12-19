@@ -28,7 +28,7 @@ class Problem119(unittest.TestCase):
         """
         Ensures the square of Number(55) is 3,025
         """
-        number1 = Number(55)
+        number1 = CodingChallenge.Number(55)
         self.assertTrue(number1.square(2))
 
 
