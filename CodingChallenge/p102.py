@@ -9,7 +9,7 @@ import math, time
 
 class Triangle(object):
     """
-    Represents a triangle
+    The triangle class is used to represent a triangle
     """
     def __init__(self, ax, ay, bx, by, cx, cy):
         """
@@ -22,7 +22,7 @@ class Triangle(object):
     @property
     def vertices(self):
         """
-        Returns the vertices of a triangle
+        Returns the vertices of a triangle in a tuple
         """
         return (self.A, self.B, self.C)
 
@@ -53,8 +53,8 @@ class Triangle(object):
 
 def solution():
     """
-    Read the triangles from the text file, and count the number of
-    them that contain the origin.
+    Input list of triangles from provided file as triangles and count number of triangles
+    which pass triangle.contains_origin()
     """
     start = time.time()
     total = 0
