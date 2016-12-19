@@ -78,9 +78,9 @@ class DisjointSet(object):
             root_node_2.parent = root_node_1
             root_node_1.rank += 1
 
-class MinimalSpanningTree(object):
+class MinimumSpanningTree(object):
     """
-    The minimal spanning tree class helps determine the minimal spanning tree given
+    The Minimum spanning tree class helps determine the Minimum spanning tree given
     a set of edges and vertices, using Kruskal's algorithm
 
     Reference: https://en.wikipedia.org/wiki/Kruskal's_algorithm
@@ -183,7 +183,7 @@ def solution_107():
     start = time.time()
     helper = SolutionHelper("p107_network.txt")
     nodes,edges,total_weight = helper.generate_tree()
-    mst, mst_weight = MinimalSpanningTree(nodes,edges).calculate_spanning_tree()
+    mst, mst_weight = MinimumSpanningTree(nodes,edges).calculate_spanning_tree()
     end = time.time() - start
     return total_weight - mst_weight, end
 

@@ -105,7 +105,7 @@ class Problem107_MST_Test(unittest.TestCase):
         """
         helper = CodingChallenge.SolutionHelper("p107_test_network.txt")
         nodes,edges,total_weight = helper.generate_tree()
-        mst, mst_weight = CodingChallenge.MinimalSpanningTree(nodes,edges).calculate_spanning_tree()
+        mst, mst_weight = CodingChallenge.MinimumSpanningTree(nodes,edges).calculate_spanning_tree()
         self.assertEqual(len(mst), 39)
         self.assertEqual(mst_weight, 2153)
 
