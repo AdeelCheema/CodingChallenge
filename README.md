@@ -27,3 +27,5 @@ $ nosetests -v --with-coverage --cover-package=CodingChallenge \
 Problem 102 has a supplemental API hosted at http://ep102.herokuapp.com. The backend code is located in [app.py](https://github.com/AdeelCheema/CodingChallenge/blob/master/app.py)
 
 Simply enter comma separated triangle vertices to test origin containment
+
+Further details on my approach to these problems can be provided upon request
