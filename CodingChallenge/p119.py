@@ -35,7 +35,7 @@ class Number(object):
         return self.val ** n    
 
 
-def solution():
+def solution_119():
     """
     Two loops are used to iterate through the base and exponent. The sum of the
     digits of the exponent is compared to the base. If the two values are equal,
@@ -56,6 +56,6 @@ def solution():
     return array[29],end
 
 if __name__ == "__main__":
-    result,time = solution()
+    result,time = solution_119()
     print("Result: %s" % result)
     print("---  %2f seconds ---" % (time))

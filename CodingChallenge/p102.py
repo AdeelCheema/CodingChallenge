@@ -51,7 +51,7 @@ class Triangle(object):
         A,B,C = self.vertices
         return math.fabs((A[0] - C[0])*(B[1] - A[1]) - (A[0]-B[0])*(C[1]-A[1]))/2
 
-def solution():
+def solution_102():
     """
     Input list of triangles from provided file as triangles and count number of triangles
     which pass triangle.contains_origin()
@@ -68,6 +68,6 @@ def solution():
     return total, end
 
 if __name__ == "__main__":
-    result, time = solution()
+    result, time = solution_102()
     print("Result: %s" % result)
     print("---  %2f seconds ---" % (time))

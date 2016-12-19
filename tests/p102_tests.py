@@ -42,10 +42,10 @@ class Problem102(unittest.TestCase):
         """
         Ensures the answer to Problem 102 on Project Euler is 228
         """
-        self.assertEqual(CodingChallenge.solution()[0], 228)
+        self.assertEqual(CodingChallenge.solution_102()[0], 228)
 
     def test_solution_runtime(self):
         """
-        Ensures the answer to Problem 102 on Project Euler is 228
+        Ensures the runtime is provided for Proem 102
         """
-        self.assertTrue(CodingChallenge.solution()[1],228)
+        self.assertTrue(CodingChallenge.solution_102()[1])
