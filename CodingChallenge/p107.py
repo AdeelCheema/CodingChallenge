@@ -60,7 +60,7 @@ class DisjointSet(object):
         """
         if node != node.parent:
             node.parent = self.find(node.parent)
-        return node
+        return node.parent
  
     def union(self, node1, node2):
         """
