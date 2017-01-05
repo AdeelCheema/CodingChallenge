@@ -58,8 +58,8 @@ class DisjointSet(object):
         Given a node, returns its parent node, optimized with path
         compression. 
         """
-        while node != node.parent:
-            node = node.parent
+        if node != node.parent:
+            node.parent = self.find(node.parent)
         return node
  
     def union(self, node1, node2):
